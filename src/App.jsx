@@ -8,15 +8,18 @@ import Product from "./components/PracticaCard";
 import { Container } from "@mui/material";
 import Cards from "./components/Cards";
 import Navbar from "./components/navbar/Navbar";
+import { Fragment } from "react";
 
 const App = () => {
   return (
-    <Container sx={{mt: 5}}>
-      <Navbar />
-    </Container>
-    
-      // <Cards></Cards>
-      /* <Product></Product> */
+    <Fragment>
+        <Navbar />
+      <Container sx={{ mt: 5 }}>
+      </Container>
+    </Fragment>
+
+    // <Cards></Cards>
+    /* <Product></Product> */
     // <BoxComponent></BoxComponent>
     // <Contenedor></Contenedor>
     // <BotonesIconos></BotonesIconos>

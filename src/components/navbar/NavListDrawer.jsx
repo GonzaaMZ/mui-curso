@@ -2,10 +2,10 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemTex
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
-const NavListDrawer = () => {
-    return ( 
-        <Box sx={{width: 250}}>
-            <nav>
+const NavListDrawer = ({ navLinks }) => {
+    return (
+        <Box sx={{ width: 250 }}>
+            {/* <nav>
                 <List>
                       <ListItem>
                         <ListItemIcon>
@@ -21,23 +21,22 @@ const NavListDrawer = () => {
                       </ListItem>
                 </List>
             </nav>
-            <Divider />
+            <Divider /> */}
             <nav>
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#trash">
-                            <ListItemText primary="Trash"/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#spam">
-                            <ListItemText primary="Spam"/>
-                        </ListItemButton>
-                    </ListItem>
+                    {
+                        navLinks.map(item => (
+                            <ListItem disablePadding key={item.title}>
+                                <ListItemButton component="a" href={item.title}>
+                                    <ListItemText primary={item.title} />
+                                </ListItemButton>
+                            </ListItem>
+                        ))
+                    }
                 </List>
             </nav>
         </Box>
-     );
+    );
 }
- 
+
 export default NavListDrawer;
